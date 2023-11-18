@@ -15,6 +15,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import Modal from '@mui/material/Modal';
 
+import { createTheme } from '@mui/material/styles';
+
 import CriarTarefa from './CriarTarefa';
 import EditarTarefa from './EditarTarefa';
 
@@ -81,6 +83,14 @@ const ListarTarefa = () => {
     );
   };
 
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#e64a19',
+      }
+    }
+  });
+
     return(
     <>
     <Card>
@@ -134,7 +144,9 @@ const ListarTarefa = () => {
             </TableContainer>
         </CardContent>
         <CardActions>
-            <Button size="small" variant="contained" onClick={handleOpen}>Criar Tarefa</Button>
+            
+                <Button theme={theme} size="small" variant="contained" onClick={handleOpen}>Criar Tarefa</Button>
+            
             <Button size="small" variant="outlined">Cancelar</Button>
       </CardActions> 
     </Card>
